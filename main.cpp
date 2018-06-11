@@ -1,9 +1,16 @@
 #include <iostream>
+#include <thread>
 
 using namespace std;
 
-int main()
-{
-    cout << "Hello World!" << endl;
+void hello() {
+    cout<<"Hello World from thread!!"<<endl;
+}
+
+int main() {
+
+    thread t(hello);
+    t.join();
+
     return 0;
 }
